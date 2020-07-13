@@ -8,7 +8,7 @@ import { AuthContext } from '../AuthProvider';
 import { Separator } from '../components/Separator';
 
 export function Apresentacao({navigation, route}: NavProps<'Apresentacao'>) {
-  const {logout} = useContext(AuthContext)
+  const {logout, sairapresentacao} = useContext(AuthContext)
   return (
     <ScreenContainer>
       <ScreenTitle 
@@ -19,7 +19,7 @@ export function Apresentacao({navigation, route}: NavProps<'Apresentacao'>) {
       <CardButton
         title='Qrcode'
         buttontitle='Encerrar apresentação'
-        onPress={()=>{navigation.navigate('RegistroApresentacao')}}
+        onPress={()=>{sairapresentacao()}}
       />
       <Separator vertical size={32}/>
       <Button 

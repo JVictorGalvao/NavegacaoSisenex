@@ -32,6 +32,7 @@ export type MonitorParamList = {
   Apresentacao: undefined
   ReportarProblema:undefined
   RegistroApresentacaoStack: undefined
+  MonitorTabStack: undefined
 }
 
 export type AvaliadorParamList = {

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ScreenContainer } from '../components/ScreenContainer';
 import { ScreenTitle } from '../components/ScreenTitle';
 import { View, Button } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { Separator } from '../components/Separator';
 import { NavProps, ParamList } from '../ParamLists';
+import { AuthContext } from '../AuthProvider';
 
 export function RegistroApresentacaoInput({navigation, route}:NavProps<'RegistroApresentacaoInput'>) {
+  const {apresentacao} = useContext(AuthContext)
   return (
     <ScreenContainer>
     <ScreenTitle
@@ -28,7 +30,7 @@ export function RegistroApresentacaoInput({navigation, route}:NavProps<'Registro
     <Separator vertical size={64}/>
       <Button 
         title='Confirmar'
-        onPress={() => {navigation.navigate('MonitorTabs')}}
+        onPress={() => {apresentacao();}}
       />
     <Separator vertical size={32}/>
       <Button 

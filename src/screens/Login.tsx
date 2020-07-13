@@ -14,7 +14,6 @@ export function Login ({route}:NavProps<'Login'>){
       <ScreenTitle
         title='Login'
       />
-      <Text>route: {route.name}</Text>
       <Separator vertical size={256}/>
       <Button 
         title='Monitor'

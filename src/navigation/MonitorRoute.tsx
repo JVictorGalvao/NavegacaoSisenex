@@ -55,7 +55,7 @@ function RegistroApresentacaoStack(){
   );
 }
 
-function MonitorTabs() {
+const MonitorTabs: React.FC<MonitorTabsProps> = ({}) => {
   return(
     <Tabs.Navigator 
       initialRouteName='PessoasApresentacao'       
@@ -96,18 +96,28 @@ function MonitorTabs() {
   );
 }
 
+function MonitorStack() {
+  const{inApresentacao} = useContext(AuthContext)
+  return(
+    <Stack.Navigator>
+      {inApresentacao ? (<Stack.Screen name='MonitorTabStack' component={MonitorTabs}/>) : ( 
+      <Stack.Screen name='RegistroApresentacaoStack' component={RegistroApresentacaoStack}/> )}
+    </Stack.Navigator>
+  );
+}
+
 export const MonitorRoute: React.FC<MonitorTabsProps> = ({}) => {
     return (
       <Stack.Navigator
-        initialRouteName='RegistroApresentacaoStack'
+        initialRouteName='MonitorTabs'
         screenOptions={{
           header: ()=> null
       }}>
-        <Stack.Screen name='RegistroApresentacaoStack' component={RegistroApresentacaoStack}/>
-        <Stack.Screen name='MonitorTabs' component={MonitorTabs}/>
+        <Stack.Screen name='MonitorTabs' component={MonitorStack}/>
         <Stack.Screen name='RegistroPessoa' component={PessoaStack}/>
         <Stack.Screen name='GerenciarProjeto' component={GerenciarProjeto}/>
         <Stack.Screen name='ReportarProblema' component={ReportarProblema}/>
+        <Stack.Screen name='RegistroApresentacaoInput' component={RegistroApresentacaoInput}/>
       </Stack.Navigator>
     );
 }

@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ScreenContainer } from '../components/ScreenContainer';
 import { ScreenTitle } from '../components/ScreenTitle';
 import { Separator } from '../components/Separator';
 import { Button } from 'react-native';
 import { NavProps } from '../ParamLists';
-import { Card, CardButton } from '../components/Card';
+import { AuthContext } from '../AuthProvider';
 
 export function RegistroApresentacao ({navigation, route}: NavProps<'RegistroApresentacao'>) {
+  const {apresentacao, inApresentacao} = useContext(AuthContext)
   return (
     <ScreenContainer>
       <ScreenTitle 
@@ -16,8 +17,9 @@ export function RegistroApresentacao ({navigation, route}: NavProps<'RegistroApr
       <Separator vertical size={256}/>
       <Button 
         title='Escaneei o código'
-        onPress={()=>{navigation.navigate('MonitorTabs')}}
+        onPress={()=>{apresentacao();}}
       />
+      {console.log(inApresentacao)}
       <Separator vertical size={32}/>
       <Button 
         title='Digitar o código' 

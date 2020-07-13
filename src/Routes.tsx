@@ -4,7 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { Login } from './screens/Login';
 import { ParamList } from './ParamLists';
 import { ScreenContainer } from './components/ScreenContainer';
-import { ActivityIndicator, View, AsyncStorage, Text, Button } from 'react-native';
+import { ActivityIndicator, AsyncStorage } from 'react-native';
 import Center from './components/Center';
 import { AuthContext } from './AuthProvider';
 import { MonitorRoute } from './navigation/MonitorRoute';
@@ -18,7 +18,7 @@ const Stack = createStackNavigator<ParamList>();
 
 
 export const Routes: React.FC<RoutesProps> = ({}) => {
-  const {user, loginMonitor} = useContext(AuthContext);
+  const {user} = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const {isMonitor} = useContext(AuthContext);
 
@@ -26,7 +26,7 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
     AsyncStorage.getItem('user')
       .then(userString => {
         if (userString){
-          loginMonitor();
+          //loginAvaliador();
         }
         setLoading(false);
       })
