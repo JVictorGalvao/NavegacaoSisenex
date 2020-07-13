@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { AvaliadorParamList } from '../ParamLists';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text, Button, AsyncStorage } from 'react-native';
+import { Text, Button } from 'react-native';
 import { ScreenContainer } from '../components/ScreenContainer';
 import Center from '../components/Center';
 import { AuthContext } from '../AuthProvider';

@@ -1,14 +1,11 @@
 import React, { useContext } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { ScreenContainer } from '../components/ScreenContainer';
-import Center from '../components/Center';
-import { Text, Button, AsyncStorage } from 'react-native';
-import { MonitorParamList, NavProps } from '../ParamLists';
+import { MonitorParamList } from '../ParamLists';
 import { AuthContext } from '../AuthProvider';
 import { RegistroApresentacao } from '../screens/RegistroApresentacao';
 import { RegistroApresentacaoInput } from '../screens/RegistroApresentacaoInput';
 import { PessoasApresentacao } from '../screens/PessoasApresentacao';
-import {AntDesign, Entypo , MaterialCommunityIcons,Ionicons, EvilIcons} from '@expo/vector-icons';
+import {AntDesign, Entypo , MaterialCommunityIcons} from '@expo/vector-icons';
 import { createStackNavigator } from '@react-navigation/stack';
 import { RegistroPessoa } from '../screens/RegistroPessoa';
 import { RegistroPessoaInput } from '../screens/RegistroPessoaInput';

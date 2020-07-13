@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavProps } from '../ParamLists';
 import { View, NativeSyntheticEvent, NativeTouchEvent } from 'react-native';
 import { MaterialIcons } from "@expo/vector-icons"
 

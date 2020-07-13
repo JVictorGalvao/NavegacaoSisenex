@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import { ScreenContainer } from '../components/ScreenContainer';
 import { ScreenTitle } from '../components/ScreenTitle';
-import { View, Button } from 'react-native';
+import { Button } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { Separator } from '../components/Separator';
-import { NavProps, ParamList } from '../ParamLists';
+import { NavProps } from '../ParamLists';
 import { AuthContext } from '../AuthProvider';
 
-export function RegistroApresentacaoInput({navigation, route}:NavProps<'RegistroApresentacaoInput'>) {
+export function RegistroApresentacaoInput({navigation}:NavProps<'RegistroApresentacaoInput'>) {
   const {apresentacao} = useContext(AuthContext)
   return (
     <ScreenContainer>

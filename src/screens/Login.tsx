@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
-import { Button, Text } from 'react-native';
+import { Button } from 'react-native';
 import { ScreenContainer } from '../components/ScreenContainer';
 import { ScreenTitle } from '../components/ScreenTitle';
 import { Separator } from '../components/Separator';
-import { NavProps } from '../ParamLists';
 import { AuthContext } from '../AuthProvider';
 
 
-export function Login ({route}:NavProps<'Login'>){
+export function Login (){
   const {loginMonitor, loginAvaliador} = useContext(AuthContext);
   return (
     <ScreenContainer>

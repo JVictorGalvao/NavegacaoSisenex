@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Aplicação com TypeScript simulando a navegação do SisEnex",
+    "githubUrl": "https://github.com/JVictorGalvao/NavegacaoSisenex"
   }
 }

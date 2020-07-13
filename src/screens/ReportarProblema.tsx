@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavProps } from '../ParamLists';
-import { Alert, View, TextInput, Button } from 'react-native';
+import { Alert, TextInput, Button } from 'react-native';
 import { ScreenContainer } from '../components/ScreenContainer';
 import { ScreenTitle } from '../components/ScreenTitle';
 import { BackButton } from '../components/BackButton';
 import { Separator } from '../components/Separator';
 
-export function ReportarProblema({navigation, route}:NavProps<'ReportarProblema'>) {
+export function ReportarProblema({navigation}:NavProps<'ReportarProblema'>) {
   const showAlert = () =>{
     Alert.alert(
       'Problema enviado!'

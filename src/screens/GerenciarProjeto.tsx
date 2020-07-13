@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { NavProps } from '../ParamLists';
 import { ScreenContainer } from '../components/ScreenContainer';
-import { ScreenTitle } from '../components/ScreenTitle';
 import { Card } from '../components/Card';
 import { Separator } from '../components/Separator';
 import { Button, Text } from 'react-native';
@@ -9,7 +8,7 @@ import { BackButton } from '../components/BackButton';
 
 
 
-export function GerenciarProjeto({navigation, route}:NavProps<'GerenciarProjeto'>) {
+export function GerenciarProjeto({navigation}:NavProps<'GerenciarProjeto'>) {
   const [apresentacao, setApresentacao] = useState<null | string>(null);
   const habilitar = () =>{
     setApresentacao('Apresentacao em curso')

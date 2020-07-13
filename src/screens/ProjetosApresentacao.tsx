@@ -1,10 +1,10 @@
 import React from 'react'
 import { ScreenContainer } from '../components/ScreenContainer';
 import { ScreenTitle } from '../components/ScreenTitle';
-import { Card, CardButton } from '../components/Card';
+import { CardButton } from '../components/Card';
 import { NavProps } from '../ParamLists';
 
-export function ProjetosApresentacao({navigation, route}:NavProps<'ProjetosApresentacao'>) {
+export function ProjetosApresentacao({navigation}:NavProps<'ProjetosApresentacao'>) {
     return (
       <ScreenContainer>
         <ScreenTitle
