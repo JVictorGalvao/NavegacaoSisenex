@@ -13,6 +13,11 @@ export type ParamList = {
   GerenciarProjeto:undefined
   Apresentacao: undefined
   ReportarProblema:undefined
+  Identidade:undefined
+  Projetos:undefined
+  AvaliacaoProjetos: undefined
+  Avaliacoes: undefined
+  VisualizarAvaliacaoProjeto: undefined
 }
 
 export type NavProps<T extends keyof ParamList> = {
@@ -36,7 +41,10 @@ export type MonitorParamList = {
 }
 
 export type AvaliadorParamList = {
-  Tela1: undefined
-  Tela2: undefined
-  Tela3: undefined
+  Identidade:undefined
+  IdentidadeStack:undefined
+  Projetos:undefined
+  AvaliacaoProjetos: undefined
+  Avaliacoes: undefined
+  VisualizarAvaliacaoProjeto: undefined
 }

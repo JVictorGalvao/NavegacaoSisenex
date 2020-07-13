@@ -17,8 +17,9 @@ export const ScreenTitle: React.FC<ScreenTitleProps> = props => {
           style={[
             styles.subtitle,
             {
-              textAlign: 'left',
-              color: "black",
+              textAlign: props.centerSubtitle ? 'center' : undefined,
+              color: props.centerSubtitle ? 'black' : undefined,
+              fontWeight: props.centerSubtitle ? 'bold' : undefined,
               fontSize: 16
             }
           ]}

@@ -9,6 +9,10 @@ interface CardProps {
 interface CardButtonProps {
   title: string,
   buttontitle: string,
+  subtitle?: boolean,
+  textsubtitle?: string,
+  nota?: boolean,
+  valornota? : string,
   onPress: (ev: NativeSyntheticEvent<NativeTouchEvent>) => void
 }
 
@@ -24,18 +28,37 @@ export const CardButton: React.FC<CardButtonProps> = props => {
   return (
     <View style={styles.titleContainer}>
       <Text style={styles.title}>{props.title}</Text>
-      <Separator vertical size={16}/>
-      <View style={styles.button}>
+        {props.subtitle ? <Text style={styles.subtitle}>
+          {props.textsubtitle}</Text> :
+          <Separator vertical size={16}/>
+        }
+        {props.nota ? <Text style={styles.nota}>
+          {props.valornota}
+        </Text> : (<View style={styles.button}>
         <Button 
           title={props.buttontitle}
           onPress={props.onPress}
         />
-      </View>
+      </View>)}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  nota: {
+    fontWeight: 'bold',
+    textAlignVertical: 'center',
+    textAlign: 'center',
+    fontSize: 20,
+  },
+  subtitle: {
+    paddingTop: 15,
+    paddingBottom: 15,
+    textAlignVertical: 'center',
+    textAlign: 'center',
+    fontSize: 12,
+    color: 'gray'
+  },
   title: {
     textAlignVertical: 'center',
     textAlign: 'center',

@@ -23,12 +23,7 @@ const Stack = createStackNavigator<MonitorParamList>();
 
 function PessoaStack() {
   return(
-    <Stack.Navigator 
-      initialRouteName='PessoasApresentacao'
-      screenOptions={{
-        header: ()=> null
-      }}
-    >
+    <Stack.Navigator>
       <Stack.Screen name='RegistroPessoa' component={RegistroPessoa}/>
       <Stack.Screen name='RegistroPessoaInput' component={RegistroPessoaInput}/>
     </Stack.Navigator>
@@ -57,7 +52,7 @@ const MonitorTabs: React.FC<MonitorTabsProps> = ({}) => {
     <Tabs.Navigator 
       initialRouteName='PessoasApresentacao'       
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#add8e6',
       }}> 
       <Tabs.Screen 
         name='PessoasApresentacao' 
