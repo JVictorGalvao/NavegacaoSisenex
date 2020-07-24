@@ -53,6 +53,7 @@ const MonitorTabs: React.FC<MonitorTabsProps> = ({}) => {
       initialRouteName='PessoasApresentacao'       
       tabBarOptions={{
         activeTintColor: '#add8e6',
+        iconStyle: null,
       }}> 
       <Tabs.Screen 
         name='PessoasApresentacao' 
@@ -79,6 +80,7 @@ const MonitorTabs: React.FC<MonitorTabsProps> = ({}) => {
         component={Apresentacao}
         options={{
           tabBarLabel: 'APRESENTAÇÃO',
+          //tabBarIcon: () => null,
           tabBarIcon: ({color, size}) => (
             <MaterialCommunityIcons name="projector-screen" size={size} color={color} />
           )
