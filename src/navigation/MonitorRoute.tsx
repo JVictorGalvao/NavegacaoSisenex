@@ -13,6 +13,7 @@ import { ProjetosApresentacao } from '../screens/ProjetosApresentacao';
 import { GerenciarProjeto } from '../screens/GerenciarProjeto';
 import { Apresentacao } from '../screens/Apresentacao';
 import { ReportarProblema } from '../screens/ReportarProblema';
+import { TermoDeUso } from '../screens/TermoDeUso';
 
 interface MonitorTabsProps {
 
@@ -101,9 +102,10 @@ function MonitorStack() {
 }
 
 export const MonitorRoute: React.FC<MonitorTabsProps> = ({}) => {
-    return (
+  const {assinouTermo} = useContext(AuthContext)  
+  return (
       <Stack.Navigator
-        initialRouteName='MonitorTabs'
+        initialRouteName= {assinouTermo ? 'MonitorTabs' : 'TermoDeUso'}
         screenOptions={{
           header: ()=> null
       }}>
@@ -112,6 +114,7 @@ export const MonitorRoute: React.FC<MonitorTabsProps> = ({}) => {
         <Stack.Screen name='GerenciarProjeto' component={GerenciarProjeto}/>
         <Stack.Screen name='ReportarProblema' component={ReportarProblema}/>
         <Stack.Screen name='RegistroApresentacaoInput' component={RegistroApresentacaoInput}/>
+        <Stack.Screen name= 'TermoDeUso' component={TermoDeUso}/>
       </Stack.Navigator>
     );
 }

@@ -9,6 +9,7 @@ import Center from './components/Center';
 import { AuthContext } from './AuthProvider';
 import { MonitorRoute } from './navigation/MonitorRoute';
 import { AvaliadorRoute } from './navigation/AvaliadorRoute';
+import { TermoDeUsoScreen } from './screens/TermoDeUso';
 
 interface RoutesProps {
 
@@ -21,7 +22,7 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
   const {user} = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
   const {isMonitor} = useContext(AuthContext);
-
+  const {assinouTermo} = useContext(AuthContext);
   useEffect(() => {
     AsyncStorage.getItem('user')
       .then(userString => {
@@ -48,7 +49,7 @@ export const Routes: React.FC<RoutesProps> = ({}) => {
 
     return (
       <NavigationContainer>
-        {user ? (isMonitor ? <MonitorRoute/>: <AvaliadorRoute/>) : (
+        {user ? (isMonitor ? (assinouTermo ? <MonitorRoute/> : <TermoDeUsoScreen/> ) : (assinouTermo ? <AvaliadorRoute/> : <TermoDeUsoScreen/>)) : (
         <Stack.Navigator screenOptions={{
           header: ()=> null
         }}>

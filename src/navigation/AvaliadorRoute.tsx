@@ -12,6 +12,7 @@ import { Projetos } from '../screens/Projetos';
 import { AvaliacaoProjeto } from '../screens/AvaliacaoProjeto';
 import { Avaliacoes } from '../screens/Avaliacoes';
 import { VisualizarAvaliacaoProjeto } from '../screens/VisualizarAvaliacaoProjeto';
+import { TermoDeUso } from '../screens/TermoDeUso';
 
 
 interface AvaliadorTabsProps {
@@ -80,15 +81,17 @@ function AvaliadorTabs() {
 }
 
 export const AvaliadorRoute: React.FC<AvaliadorTabsProps> = ({}) => {
-    return (
+  const {assinouTermo} = useContext(AuthContext)    
+  return (
       <Stack.Navigator
-        initialRouteName='IdentidadeStack'
+        initialRouteName={assinouTermo ? 'IdentidadeStack' : 'TermoDeUso'}
         screenOptions={{
           header: ()=> null
       }}>
         <Stack.Screen name='IdentidadeStack' component={AvaliadorTabs}/>
         <Stack.Screen name='AvaliacaoProjetos' component={AvaliacaoProjeto}/>
         <Stack.Screen name='VisualizarAvaliacaoProjeto' component={VisualizarAvaliacaoProjeto}/>
+        <Stack.Screen name= 'TermoDeUso' component={TermoDeUso}/>
       </Stack.Navigator>
     );
 }
